@@ -1,0 +1,39 @@
+k{% extends 'base.html' %}
+
+{% block title %}
+Edit Restaurant
+{% endblock %}
+
+{%block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+
+        <div class="card">
+            <div class="card-title">
+                <h4>Edit Restaurant</h4>
+
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="post" action="/restaurant/edit/?id={{ restaurant['id'] }}">
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12">Restaurant Name</p>
+                            <input name="name" type="text" value="{{ restaurant['name'] }}" class="form-control input-default" required="required">
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12">Description</p>
+                            <input name="desc" type="text" value="{{ restaurant['desc'] }}" class="form-control input-default"
+                                   required="required">
+                        </div>
+                        <div class="form-group">
+                            <p class="text-muted m-b-15 f-s-12">Site Url</p>
+                            <input name="site_url" type="text" value="{{ restaurant['site_url'] }}" class="form-control input-default" required="required">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

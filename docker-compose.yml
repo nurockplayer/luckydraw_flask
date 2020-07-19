@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  mariadb:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    ports:
+      - "3306:3306"
+  web:
+    build: .
+    restart: always
+    command: tail -f /dev/null
+    volumes:
+      - .:/root/web
+    environment:
+      - LC_ALL=C.UTF-8
+      - FLASK_ENV=development
+    ports:
+      - "5000:5000"
+    links:
+      - mariadb

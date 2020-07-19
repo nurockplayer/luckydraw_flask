@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Restaurants
+{% endblock %}
+
+{% block content %}
+{% for restaurant in restaurant_list %}
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-title">
+                <h4>{{  restaurant['name'] }}</h4>
+            </div>
+            <p class="text-muted ">
+                {{  restaurant['desc'] }}
+            </p>
+            <div class="button-list">
+                <div class="btn-group">
+                    <a href="{{  restaurant['site_url']  }}" class="btn btn-visit" target="_blank">Visit Site</a>
+                    <a href="/restaurant/edit/?id={{ restaurant['id'] }}" class="btn btn-primary">Edit</a>
+                    <a href="/restaurant/delete/?id={{ restaurant['id'] }}" onclick="return confirm('delete?')" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<div class="row justify-content-center">
+    <div class="col-lg-6" style="margin-bottom: 50px;">
+        <a href="/restaurant/create/" class="btn btn-primary btn-block">New Restaurant</a>
+    </div>
+</div>
+{% endblock %}
