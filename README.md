@@ -16,7 +16,7 @@ $ docker-compose up -d
 第一次下載會需要一些時間  
 趁著下載的期間寫設定檔
 ```
-$ mkdier instance
+$ mkdir instance
 $ touch instance/local.cfg
 ```
 
