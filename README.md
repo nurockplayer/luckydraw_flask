@@ -17,7 +17,7 @@ $ docker-compose up -d
 趁著下載的期間寫設定檔
 ```
 $ mkdier instance
-$ touch local.cfg
+$ touch instancelocal.cfg
 ```
 
 並將以下三項設定寫進 local_docker.cfg
