@@ -4,7 +4,7 @@
 先安裝 Docker Desktop  
 Mac 可以用 homebrew 安裝
 ```
-$ brew cask install docker
+$ brew cask install docker-desktop
 ```
 安裝好之後開啟 Docker.app
 
